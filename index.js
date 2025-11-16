@@ -14,8 +14,7 @@ function handleSubmit(e) {
     toggleHidden(errorMessage);
     formInput.classList.toggle("active-error");
   } else {
-    toggleHidden(formCard);
-    toggleHidden(successCard);
+    [formCard, successCard].forEach(card => toggleHidden(card))
     successEmail.textContent = email;
   }
 }

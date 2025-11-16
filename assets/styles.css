@@ -63,7 +63,7 @@ ul li {
 ul li::before {
   content: "";
   display: inline-block;
-  background-image: url(assets/images/icon-list.svg);
+  background-image: url(/assets/images/icon-list.svg);
   background-size: contain;
   width: 1.5rem;
   height: 1.5rem;
