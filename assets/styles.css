@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap");
+body {
+  background-color: #242742;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-card {
+  background-color: #ffffff;
+  color: #242742;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+picture {
+  display: block;
+  width: 100%;
+}
+
+.illustration {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.card-txt {
+  padding: 2.5rem 1.5rem;
+}
+.card-txt h1 {
+  font-size: clamp(2.5rem, 1.9rem + 2.98vw, 6rem);
+  line-height: 100%;
+  font-weight: 700;
+  letter-spacing: 0px;
+  margin: 0;
+}
+.card-txt p {
+  font-size: clamp(0.875rem, 0.77rem + 0.53vw, 1.5rem);
+  line-height: 150%;
+  font-weight: 400;
+  letter-spacing: 0px;
+  margin: 1.5rem 0;
+}
+
+ul {
+  font-size: clamp(0.875rem, 0.77rem + 0.53vw, 1.5rem);
+  line-height: 150%;
+  font-weight: 400;
+  letter-spacing: 0px;
+  padding: 0;
+  list-style: none;
+}
+ul li {
+  display: flex;
+  align-items: start;
+  margin-bottom: 0.5rem;
+}
+ul li::before {
+  content: "";
+  display: inline-block;
+  background-image: url(/assets/images/icon-list.svg);
+  background-size: contain;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  margin-right: 1.5rem;
+}
+
+form {
+  padding: 0 1.5rem 2.5rem;
+}
+
+label {
+  font-size: clamp(0.75rem, 0.53rem + 1.06vw, 2rem);
+  line-height: 150%;
+  font-weight: 700;
+  letter-spacing: 0px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.error-message {
+  font-size: clamp(0.75rem, 0.53rem + 1.06vw, 2rem);
+  line-height: 150%;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: #ff6155;
+}
+
+.active-error {
+  color: #ff6155;
+  border-color: #ff6155;
+  background-color: #ffe7e6;
+}
+
+input {
+  font-size: clamp(0.75rem, 0.622rem + 0.64vw, 1.5rem);
+  box-sizing: border-box;
+  width: 100%;
+  height: clamp(1.5rem, 0.99rem + 2.55vw, 4.5rem);
+  border-radius: 10px;
+  border-color: #949494;
+  padding: 1.5rem 2rem;
+  margin: 0.5rem auto 1.5rem;
+}
+
+button {
+  font-size: clamp(0.875rem, 0.77rem + 0.53vw, 1.5rem);
+  line-height: 150%;
+  font-weight: 700;
+  letter-spacing: 0px;
+  width: 100%;
+  background-color: #242742;
+  color: #ffffff;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 32rem) {
+  body {
+    min-height: 100vh;
+  }
+  .form-card {
+    width: 80%;
+    border-radius: 36px;
+    padding: 2.5rem;
+  }
+  .image-wrapper {
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+}
+@media (min-width: 60rem) {
+  .form-card {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1.5rem 2rem;
+    max-height: fit-content;
+  }
+  .image-wrapper {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 32rem) {
+  .card-txt {
+    padding: 2.5rem 0;
+  }
+  .card-txt h1 {
+    font-size: clamp(2.5rem, 1.9rem + 2.98vw, 6rem);
+    line-height: 100%;
+    font-weight: 700;
+    letter-spacing: 0px;
+  }
+}
+@media (min-width: 60rem) {
+  .content-wrapper {
+    flex-basis: 50%;
+    padding-right: 4rem;
+    align-self: center;
+  }
+  .card-txt p {
+    margin: 2rem 0;
+  }
+  button:hover {
+    background: linear-gradient(90deg, #ff6a3a 0%, #ff527b 100%);
+  }
+}
+@media (min-width: 32rem) {
+  li::before {
+    margin-right: 1rem;
+  }
+  form {
+    padding: 0;
+  }
+}
+.success-card {
+  background-color: #ffffff;
+  color: #242742;
+  width: 100%;
+  max-height: 100vh;
+}
+
+.success-icon {
+  width: 4rem;
+}
+
+.success-content {
+  margin: 9rem 1.5rem 4.5rem;
+}
+.success-content h1 {
+  font-size: clamp(2.5rem, 1.9rem + 2.98vw, 6rem);
+  line-height: 100%;
+  font-weight: 700;
+  letter-spacing: 0px;
+  margin: 2rem 0;
+}
+.success-content p {
+  font-size: clamp(0.875rem, 0.77rem + 0.53vw, 1.5rem);
+  line-height: 150%;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+.success-content p .success-email {
+  font-weight: 900;
+}
+.success-content button {
+  position: relative;
+  margin-top: 80%;
+  border-radius: 0.5rem;
+  border: none;
+  color: #ffffff;
+  background-color: #242742;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: clamp(0.875rem, 0.77rem + 0.53vw, 1.5rem);
+  line-height: 150%;
+  font-weight: 700;
+  letter-spacing: 0px;
+}
+
+@media (min-width: 32rem) {
+  .success-card {
+    width: 70%;
+    height: fit-content;
+    border-radius: 3rem;
+  }
+  .success-content {
+    margin: auto;
+    padding: 4rem;
+  }
+  .success-content button {
+    margin-top: 2rem;
+  }
+}
+@media (min-width: 60rem) {
+  .success-card {
+    width: 40%;
+  }
+  button:hover {
+    background: linear-gradient(90deg, #ff6a3a 0%, #ff527b 100%);
+    box-shadow: #ffe7e6 0 2rem 1rem;
+  }
+}
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */

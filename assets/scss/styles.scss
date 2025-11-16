@@ -1,0 +1,276 @@
+@use "base" as v;
+@use "mixins" as mix;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap");
+
+body {
+  background-color: v.$blue800;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// FORM CARD & IMAGE
+
+.form-card {
+  background-color: v.$white;
+  color: v.$blue800;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+picture {
+  display: block;
+  width: 100%;
+}
+
+.illustration {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+// CARD TEXT CONTENT AND INPUT
+
+.card-txt {
+  padding: v.$space500 v.$space300;
+
+  h1 {
+    @include mix.txt-preset-1;
+    margin: 0;
+  }
+
+  p {
+    @include mix.txt-preset-2;
+    margin: v.$space300 0;
+  }
+}
+
+ul {
+  @include mix.txt-preset-2;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: start;
+    margin-bottom: v.$space100;
+  }
+
+  li::before {
+    content: "";
+    display: inline-block;
+    background-image: url(/assets/images/icon-list.svg);
+    background-size: contain;
+    width: v.$space300;
+    height: v.$space300;
+    background-repeat: no-repeat;
+    margin-right: v.$space300;
+  }
+}
+
+form {
+  padding: 0 v.$space300 v.$space500;
+}
+
+label {
+  @include mix.txt-preset-3;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+// ERROR STATE
+.error-message {
+  @include mix.txt-preset-3;
+  color: v.$red;
+}
+
+.active-error {
+  color: v.$red;
+  border-color: v.$red;
+  background-color: v.$red100;
+}
+
+input {
+  font-size: clamp(0.75rem, 0.622rem + 0.64vw, 1.5rem);
+  box-sizing: border-box;
+  width: 100%;
+  height: clamp(v.$space300, 0.99rem + 2.55vw, v.$space900);
+  border-radius: 10px;
+  border-color: v.$grey;
+  padding: v.$space300 v.$space400;
+  margin: v.$space100 auto v.$space300;
+}
+
+button {
+  @include mix.txt-preset-2(700);
+  width: 100%;
+  background-color: v.$blue800;
+  color: v.$white;
+  padding: v.$space200 v.$space600;
+  border-radius: v.$space100;
+}
+
+// MEDIA QUERIES
+
+// FORM-CARD & IMAGE
+@media (min-width: 32rem) {
+  body {
+    min-height: 100vh;
+  }
+  .form-card {
+    width: 80%;
+    border-radius: 36px;
+    padding: v.$space500;
+  }
+
+  .image-wrapper {
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 60rem) {
+  .form-card {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: v.$space300 v.$space400;
+    max-height: fit-content;
+  }
+
+  .image-wrapper {
+    flex-basis: 50%; // is needed?
+  }
+}
+
+// CARD TEXT CONTENT
+
+@media (min-width: 32rem) {
+  .card-txt {
+    padding: v.$space500 0;
+
+    h1 {
+      @include mix.txt-preset-1;
+    }
+  }
+}
+
+@media (min-width: 60rem) {
+  .content-wrapper {
+    flex-basis: 50%;
+    padding-right: v.$space800;
+    align-self: center;
+  }
+
+  .card-txt {
+    p {
+      margin: 2rem 0;
+    }
+  }
+
+  button:hover {
+    background: linear-gradient(
+      90deg,
+      v.$gradient-start 0%,
+      v.$gradient-end 100%
+    );
+  }
+}
+
+// INPUT
+
+@media (min-width: 32rem) {
+  li::before {
+    margin-right: v.$space200;
+  }
+
+  form {
+    padding: 0;
+  }
+}
+
+// SUCCESS DISPLAY
+
+.success-card {
+  background-color: v.$white;
+  color: v.$blue800;
+  width: 100%;
+  max-height: 100vh;
+}
+
+.success-icon {
+  width: v.$space800;
+}
+
+.success-content {
+  margin: 9rem v.$space300 v.$space900;
+
+  h1 {
+    @include mix.txt-preset-1;
+    margin: v.$space400 0;
+  }
+
+  p {
+    @include mix.txt-preset-2;
+
+    .success-email {
+      font-weight: 900;
+    }
+  }
+
+  button {
+    position: relative;
+    margin-top: 80%;
+    border-radius: v.$space100;
+    border: none;
+    color: v.$white;
+    background-color: v.$blue800;
+    width: 100%;
+    padding: v.$space200 0;
+    @include mix.txt-preset-2(700);
+  }
+}
+
+@media (min-width: 32rem) {
+  .success-card {
+    width: 70%;
+    height: fit-content;
+    border-radius: v.$space600;
+  }
+
+  .success-content {
+    margin: auto;
+    padding: v.$space800;
+
+    button {
+      margin-top: v.$space400;
+    }
+  }
+}
+
+@media (min-width: 60rem) {
+  .success-card {
+    width: 40%;
+  }
+
+  button:hover {
+    background: linear-gradient(
+      90deg,
+      v.$gradient-start 0%,
+      v.$gradient-end 100%
+    );
+    box-shadow: v.$red100 0 v.$space400 v.$space200;
+  }
+}
+
+// DISPLAY TOGGLE CLASS
+.hidden {
+  display: none;
+}
